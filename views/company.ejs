@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ./partials/developer-header %>
+</header>
+
+<main>
+	<dir class="row" style="padding-top:30px">
+		<div class="col-xs-3">
+			<img src="/image/company.png" class="rounded" alt="Cinque Terre" style="
+			max-width: 40%;
+			position: absolute;
+			right: 20px;
+    		width: 300px;
+    		top: 20px">
+		</div>
+
+		<div class="col-xs-9">
+			<div class="row bg-info text-white">
+				<!-- <div class="col-xs-6">Company</div> -->
+				<p style="font-size: 20px;"><a href="http://<%= company_url %>" target="_blank"> <%= company %></a></p>
+			</div>
+
+			<div class="row bg-light text-dark">
+				<div class="col-xs-6">
+					<p><span class="glyphicon glyphicon-home"> Location:  Unknown</span></p>
+				</div>
+				<div class="col-xs-6">
+					<p><span id="company_mail" class="glyphicon glyphicon-envelope"> Company e-mail: <a href="mailto:<%= company_email %>"><%= company_email %></a></span></p>  
+				</div>
+			</div>
+
+			<div class="row bg-secondary text-white">
+				<div class="col-xs-6">
+					<p><span class="glyphicon glyphicon-book"> Company's Twitter:  <a href="<%= company_twitter %>" target="_blank"><%= company_twitter %></a></span></p>
+				</div>
+				<div class="col-xs-6">
+					<p><span id="company_mail" class="glyphicon glyphicon-eye-open"> Company's Blog: <a href="<%= company_blog %>" target="_blank"><%= company_blog %></a></span></p>  
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-6">
+					<p><span id="ceo_name" class="glyphicon glyphicon-user"> CEO: <%= company %></span></p> 
+				</div>
+
+				<div class="col-xs-6">
+					<p><span id="ceo_twitter" class="glyphicon glyphicon-headphones"> CEO'Twitter: <a href="<%= CEO_Twitter %>" target="_blank"><%= CEO_Twitter %></a></span></p>    
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="col-xs-8">
+					<p><span class="glyphicon glyphicon-lock"> CEO's e-mail: <a href="mailto:chainmapsocial@gmail.com">Request it</a></span></p>
+				</div>
+			</div>
+
+
+		</div>
+	</dir>
+</main>
+
+<footer>
+    <% include ./partials/developer-footer %>
+</footer>
+
+</body>
+</html>

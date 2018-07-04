@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ./partials/developer-header %>
+</header>
+
+<main>
+	<dir class="row" style="padding-top:30px">
+		<div class="col-xs-3">
+			<img src="/image/event.png" class="rounded" alt="Cinque Terre" style="
+			max-width: 40%;
+			position: absolute;
+			right: 20px;
+    		width: 300px;
+    		top: 20px">
+		</div>
+
+		<div class="col-xs-9">
+			<div class="row bg-info text-white">
+				<!-- <div class="col-xs-6">Company</div> -->
+				<p style="font-size: 20px;"><a href="http://<%= event_url %>" target="_blank"> <%= event %></a></p>
+			</div>
+
+			<div class="row bg-light text-dark">
+				<div class="col-xs-6">
+					<p><span class="glyphicon glyphicon-home"> Location:  <%= event_city %>, <%= event_country %> </span></p>
+				</div>
+				<div class="col-xs-6">
+					<p><span id="company_mail" class="glyphicon glyphicon-envelope"> Contact e-mail: <a href="mailto:<%= email %>"><%= email %></a></span></p>  
+				</div>
+			</div>
+
+			<div class="row bg-secondary text-white">
+				<div class="col-xs-6">
+					<p><span class="glyphicon glyphicon-book"> Event's Twitter:  <a href="<%= event_twitter %>" target="_blank"><%= event_twitter %></a></span></p>
+				</div>
+				<div class="col-xs-6">
+					<p><span id="company_mail" class="glyphicon glyphicon-eye-open"> Event's Contact: <a href="<%= contact_url %>" target="_blank"><%= contact_url %></a></span></p>  
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-xs-8">
+					<p><span class="glyphicon glyphicon-lock"> Event Date: <%= event_date %></span></p>
+				</div>
+			</div>
+
+
+		</div>
+	</dir>
+</main>
+
+<footer>
+    <% include ./partials/developer-footer %>
+</footer>
+
+</body>
+</html>
