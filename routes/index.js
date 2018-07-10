@@ -18,9 +18,9 @@ router.get('/query/:category/:content', function(req, res, next) {
     console.log("category " + req.params.category);
     var url = '';
     if (req.params.category == 'All') {
-        url = 'http://localhost:8983/solr/chainmap/select?fl=title,%20summary,%20category&q=search_content:'+ encodeURI(req.params.content) +'&wt=json';
+        url = 'http://localhost:8983/solr/chainmap/select?fl=title,%20url,%20summary,%20category&q=search_content:'+ encodeURI(req.params.content) +'&wt=json';
     } else {
-        url = 'http://localhost:8983/solr/chainmap/select?fl=title,%20summary,%20category&q=category:'+ encodeURI(req.params.category) + '%20AND%20search_content:'+ encodeURI(req.params.content) +'&wt=json';
+        url = 'http://localhost:8983/solr/chainmap/select?fl=title,%20url,%20summary,%20category&q=category:'+ encodeURI(req.params.category) + '%20AND%20search_content:'+ encodeURI(req.params.content) +'&wt=json';
     }
 
     console.log('query is ' + url);
@@ -57,12 +57,14 @@ router.get('/resource/company/:name', function(req, res) {
             company_email: obj.response.docs[0].company_mail,
             company_twitter: obj.response.docs[0].company_twitter,
             CEO_Twitter: obj.response.docs[0].ceo_twitter,
-            company_blog: obj.response.docs[0].company_blog
+            company_blog: obj.response.docs[0].company_blog,
+            url: obj.response.docs[0].url
             // company: req.params.name
         });
     });
     // res.render('company', { title: 'Comapany Info' });
 });
+
 
 router.get('/resource/ico/:name', function(req, res) {
     // http://localhost:8983/solr/chainmap/select?q=ico_name:21%20million
@@ -79,7 +81,8 @@ router.get('/resource/ico/:name', function(req, res) {
             blog: obj.response.docs[0].blog,
             ceo: obj.response.docs[0].ceo,
             ceo_twitter: obj.response.docs[0].ceo_twitter,
-            ceo_mail: obj.response.docs[0].ceo_mail
+            ceo_mail: obj.response.docs[0].ceo_mail,
+            url: obj.response.docs[0].url
             // company: req.params.name
         });
     });
@@ -101,7 +104,8 @@ router.get('/resource/event/:name', function(req, res) {
             event_country: obj.response.docs[0].event_country,
             event_twitter: obj.response.docs[0].event_twitter,
             contact_url: obj.response.docs[0].event_contact_url,
-            email: obj.response.docs[0].event_mail
+            email: obj.response.docs[0].event_mail,
+            url: obj.response.docs[0].url
             // company: req.params.name
         });
     });
